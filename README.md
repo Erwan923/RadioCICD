@@ -21,110 +21,99 @@
 
 RadioCICD is a **complete containerized CI/CD pipeline** for Radio Frequency testing automation. Deploy a full RF testing infrastructure in minutes using Docker containers - no complex installations required.
 
-<div align="center">
-  <img src="radiocicd-architecture.png" alt="RadioCICD Architecture" width="700"/>
-</div>
-
----
-
-## 🚀 **Key Features**
-
-### 📦 **100% Containerized**
-- **One-command deployment** - `docker-compose up -d`
-- **No manual installations** - Everything runs in containers
-- **Portable & reproducible** - Works anywhere Docker runs
-- **Easy scaling** - Add more test nodes effortlessly
-
-### 🔒 **On-Premise & Secure**
-- **Gitea** - Self-hosted Git repository (no external dependencies)
-- **Jenkins** - CI/CD orchestration with RF-specific pipelines
-- **Semaphore** - Containerized Ansible for hardware deployment
-- **GNU Radio** - Dockerized SDR environment with real-time monitoring
-
-### ⚡ **Automated RF Testing**
-- **Continuous Integration** - Automatic testing on every code commit
-- **Hardware-in-the-loop** - Real RF hardware testing (HackRF, BladeRF, USRP)
-- **Real-time monitoring** - Live signal analysis via GNU Radio GUI
-- **Test reporting** - Automated results collection and analysis
-
----
-
-## 🛠️ **Quick Start**
-
-### Prerequisites
-- Docker & Docker Compose
-- RF Hardware (HackRF, BladeRF, or USRP)
-- Linux host (Ubuntu 22.04+ recommended)
-
-### Deploy in 3 Steps
-```bash
-# 1. Clone the repository
-git clone https://github.com/yourname/RadioCICD.git
-cd RadioCICD
-
-# 2. Start all containers
-docker-compose up -d
-
-# 3. Access the services
-# Gitea:     http://localhost:3000
-# Jenkins:   http://localhost:8080  
-# Semaphore: http://localhost:3001
-```
-
-### 📹 Configuration Tutorial
-**Video tutorial coming soon!** Complete step-by-step setup guide for:
-- Container configuration
-- Pipeline setup
-- RF hardware integration
-- End-to-end testing workflow
-
 ---
 
 ## 🔄 **How It Works**
 
-### **1. Code Management (Gitea)**
-- Store RF test scripts and GNU Radio flowgraphs
-- Host Docker images for custom test environments
-- Manage Ansible playbooks for hardware deployment
-- Trigger builds via webhooks
+![RadioCICD Architecture](radiocicd-architecture.png)
 
-### **2. Continuous Integration (Jenkins)**
-- **Build Stage** - Validate and build GNU Radio containers
-- **Test Stage** - Run RF script validation and dry-run tests
-- **Deploy Stage** - Push validated changes to Semaphore
+### **1. 📚 Gitea (ON-PREMISE Repository)**
+Your self-hosted Git server stores everything:
+- **RF test scripts** - GNU Radio Python scripts and flowgraphs
+- **Docker images** - Custom GNU Radio containers for testing
+- **Ansible playbooks** - Automation scripts for hardware deployment
+- **Configuration files** - Pipeline and deployment configurations
 
-### **3. Test Deployment (Semaphore)**
-- Execute Ansible playbooks on RF hardware
-- Deploy test containers to remote nodes
-- Monitor deployment status via web UI
+**Why ON-PREMISE?** Complete control, no external dependencies, works in air-gapped environments.
 
-### **4. RF Testing Execution**
-- GNU Radio containers perform actual RF tests
-- Real-time signal monitoring and analysis
-- Automated test result collection
-- Integration with CI/CD feedback loop
+### **2. 🔨 Jenkins (CI/CD Orchestration)**
+When you push code to Gitea, Jenkins automatically:
+
+#### **Build Stage**
+- **Pulls latest code** from Gitea repository
+- **Builds GNU Radio Docker image** with your test scripts
+- **Validates container** - Ensures the image works correctly
+
+#### **Test Stage**  
+- **Dry-run validation** - Tests RF scripts without hardware
+- **Syntax checking** - Validates Python code and flowgraphs
+- **Ansible playbook testing** - Ensures deployment scripts are correct
+- **Integration tests** - Verifies all components work together
+
+#### **Deploy Stage**
+- **Triggers Semaphore** via webhook API
+- **Passes validated code** to deployment system
+
+**Why this matters?** Catches errors early, before they reach expensive RF hardware.
+
+### **3. 🎭 Semaphore (Deployment Manager)**
+Receives deployment requests from Jenkins and:
+- **Executes Ansible playbooks** on target RF hardware
+- **Deploys GNU Radio containers** to test nodes
+- **Manages RF hardware** - Configures HackRF/BladeRF/USRP devices
+- **Monitors deployment** via web interface
+
+**Why containerized?** No manual Ansible installation, everything runs in Docker.
+
+### **4. 📡 RF Hardware Testing**
+The actual RF testing happens:
+- **GNU Radio container** starts in monitoring mode
+- **Test scripts execute** on RF hardware (HackRF, BladeRF, USRP)
+- **Real-time monitoring** - Live signal analysis via GNU Radio GUI
+- **Data collection** - IQ samples, measurements, test results
+- **Results reporting** back to Jenkins
+
+**Why this approach?** Real hardware testing with automated monitoring and result collection.
 
 ---
 
-## 💡 **Benefits**
+## 🚀 **Quick Start**
+
+### Deploy Everything in 3 Commands
+```bash
+git clone https://github.com/Erwan923/RadioCICD.git
+cd RadioCICD
+docker-compose up -d
+```
+
+### Access Your Infrastructure
+- **Gitea**: http://localhost:3000 (Your ON-PREMISE Git)
+- **Jenkins**: http://localhost:8080 (CI/CD Dashboard)  
+- **Semaphore**: http://localhost:3001 (Deployment Manager)
+
+### 📹 Configuration Tutorial Coming Soon!
+Step-by-step video guide for complete setup and configuration.
+
+---
+
+## 💡 **Why RadioCICD?**
 
 ### **For RF Engineers**
-- 🔬 **Reproducible testing** - Consistent test environments
-- 📊 **Real-time monitoring** - Live signal analysis during tests
-- 🚀 **Faster development** - Continuous integration for RF projects
-- 🛡️ **Quality assurance** - Automated validation before deployment
+- 🔬 **Automated testing** - No more manual test execution
+- 📊 **Real-time monitoring** - See your RF tests live via GNU Radio
+- 🚀 **Faster development** - Immediate feedback on code changes
+- 🛡️ **Quality assurance** - Catch issues before hardware deployment
 
 ### **For DevOps Teams**
-- 📦 **Easy deployment** - Everything containerized and automated
-- 🔧 **Simple maintenance** - No complex software installations
-- 📈 **Scalable** - Add more test hardware as needed
-- 🔒 **Secure** - Complete on-premise solution
+- 📦 **100% containerized** - Deploy entire infrastructure with one command
+- 🔧 **No complex setup** - No manual Ansible, GNU Radio, or Git installations
+- 📈 **Scalable** - Add more RF hardware nodes easily
+- 🔒 **Secure & ON-PREMISE** - Complete control over your infrastructure
 
-### **For Organizations**
-- 💰 **Cost effective** - Efficient use of RF test equipment
-- ⚡ **Faster time-to-market** - Automated testing reduces delays
-- 📋 **Compliance ready** - Audit trails and test documentation
-- 🛡️ **Risk reduction** - Catch issues before production
+### **The Problem RadioCICD Solves**
+Traditional RF testing is manual, error-prone, and slow. RadioCICD brings modern DevOps practices to RF engineering:
+- **Before**: Manual test execution, no version control, inconsistent environments
+- **After**: Automated pipelines, version-controlled tests, reproducible results
 
 ---
 
@@ -134,49 +123,40 @@ docker-compose up -d
 - **BladeRF** - High-performance SDR platform  
 - **USRP** - Universal Software Radio Peripheral
 - **RTL-SDR** - Low-cost receive-only dongles
-- **Custom hardware** - Extensible for any RF device
 
 ---
 
-## 📁 **Project Structure**
+## 📁 **What You Get**
 
 ```
 RadioCICD/
-├── docker-compose.yml          # All services definition
-├── radiocicd-logo.png          # Project logo
-├── radiocicd-architecture.png  # System architecture
+├── docker-compose.yml          # One-command deployment
+├── radiocicd-logo.png          # Project branding
+├── radiocicd-architecture.png  # System overview
 ├── setup.sh                    # Quick setup script
-├── gitea/                      # Git repository config
-├── jenkins/                    # CI/CD pipeline definitions  
-├── Ansible/                    # Hardware deployment automation
-└── infra_deploy/               # Infrastructure as code
+├── gitea/                      # ON-PREMISE Git config
+├── jenkins/                    # CI/CD pipelines  
+├── Ansible/                    # Hardware automation
+└── infra_deploy/               # Infrastructure code
 ```
 
 ---
 
 ## 🤝 **Contributing**
 
-We welcome contributions in:
-- 🔧 **RF Hardware Support** - Add new SDR devices
-- 🧪 **Test Scripts** - GNU Radio flowgraphs and test cases
-- 📊 **Monitoring** - Enhanced visualization and reporting
-- 🐳 **Containers** - Optimized Docker images
-- 📚 **Documentation** - Tutorials and examples
-
----
-
-## 📄 **License**
-
-This project is open source and available under the [MIT License](LICENSE).
+Help improve RadioCICD:
+- 🔧 **Add RF hardware support** - New SDR devices
+- 🧪 **Create test examples** - GNU Radio flowgraphs
+- 📊 **Enhance monitoring** - Better visualization
+- 📚 **Improve documentation** - Tutorials and guides
 
 ---
 
 <div align="center">
-  <p><strong>Ready to revolutionize your RF testing? 🚀</strong></p>
+  <p><strong>Transform your RF testing with modern DevOps! 🚀</strong></p>
   
-  [![Star on GitHub](https://img.shields.io/badge/Star-on%20GitHub-yellow?style=for-the-badge&logo=github)](https://github.com/yourname/RadioCICD)
-  [![Docker Hub](https://img.shields.io/badge/Docker-Hub-blue?style=for-the-badge&logo=docker)](https://hub.docker.com/r/radiocicd)
-  [![Documentation](https://img.shields.io/badge/Read-Docs-green?style=for-the-badge&logo=gitbook)](https://docs.radiocicd.com)
+  [![Star on GitHub](https://img.shields.io/badge/Star-on%20GitHub-yellow?style=for-the-badge&logo=github)](https://github.com/Erwan923/RadioCICD)
+  [![Watch Tutorial](https://img.shields.io/badge/Tutorial-Coming%20Soon-red?style=for-the-badge&logo=youtube)](https://youtube.com)
   
   <sub>Built with 📡 and ❤️ for the RF Engineering Community</sub>
 </div>
