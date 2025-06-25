@@ -1,0 +1,16 @@
+Started at Fri Jun 20 12:34:06 UTC 2025
+Checking infra_deploy
+Deleting /var/jenkins_home/workspace/infra_deploy on Jenkins
+Checking infra_deploy » infra_deploy
+Deleting /var/jenkins_home/workspace/infra_deploy/infra_deploy on Jenkins
+Checking infra_deploy » infra_deploy » main
+Deleting /var/jenkins_home/workspace/infra_deploy_infra_deploy_main on Jenkins
+Finished at Fri Jun 20 12:34:07 UTC 2025. 711ms
+Started at Fri Jun 20 15:41:55 UTC 2025
+Checking infra_deploy
+Deleting /var/jenkins_home/workspace/infra_deploy on Jenkins
+Checking infra_deploy » infra_deploy
+Deleting /var/jenkins_home/workspace/infra_deploy/infra_deploy on Jenkins
+Checking infra_deploy » infra_deploy » main
+Deleting /var/jenkins_home/workspace/infra_deploy_infra_deploy_main on Jenkins
+Finished at Fri Jun 20 15:41:55 UTC 2025. 9ms

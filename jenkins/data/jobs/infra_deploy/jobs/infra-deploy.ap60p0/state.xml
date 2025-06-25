@@ -1,0 +1,19 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<jenkins.branch.MultiBranchProject_-State plugin="branch-api@2.1217.v43d8b_b_d8b_2c7">
+  <sourceActions>
+    <entry>
+      <string>org.jenkinsci.plugin.gitea.GiteaSCMNavigator::http://gitea:3000::R3V4N::infra_deploy</string>
+      <list>
+        <jenkins.scm.api.metadata.ObjectMetadataAction plugin="scm-api@704.v3ce5c542825a_">
+          <objectDisplayName>infra_deploy</objectDisplayName>
+          <objectDescription>Playbook Ansible CI/CD INFRA</objectDescription>
+          <objectUrl></objectUrl>
+        </jenkins.scm.api.metadata.ObjectMetadataAction>
+        <org.jenkinsci.plugin.gitea.GiteaLink plugin="gitea@250.v76a_0b_d4fef5b_">
+          <iconClassName>icon-gitea-repo</iconClassName>
+          <url>http://gitea:3000/R3V4N/infra_deploy</url>
+        </org.jenkinsci.plugin.gitea.GiteaLink>
+      </list>
+    </entry>
+  </sourceActions>
+</jenkins.branch.MultiBranchProject_-State>

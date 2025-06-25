@@ -1,0 +1,7 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugin.gitea.BranchSCMRevision plugin="gitea@250.v76a_0b_d4fef5b_">
+  <head class="org.jenkinsci.plugin.gitea.BranchSCMHead">
+    <name>main</name>
+  </head>
+  <hash>0fc8236b00ceba7488e7ee45483648b00680b9f3</hash>
+</org.jenkinsci.plugin.gitea.BranchSCMRevision>

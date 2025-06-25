@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 17
+Specification-Title: Gitea Plugin
+Specification-Version: 0.0
+Implementation-Title: Gitea Plugin
+Implementation-Version: 250.v76a_0b_d4fef5b_
+Group-Id: org.jenkins-ci.plugins
+Artifact-Id: gitea
+Short-Name: gitea
+Long-Name: Gitea Plugin
+Url: https://github.com/jenkinsci/gitea-plugin/blob/master/docs/README.m
+ d
+Plugin-Version: 250.v76a_0b_d4fef5b_
+Hudson-Version: 2.479.3
+Jenkins-Version: 2.479.3
+Plugin-Dependencies: authentication-tokens:1.131.v7199556c3004,branch-ap
+ i:2.1217.v43d8b_b_d8b_2c7,credentials:1415.v831096eb_5534,display-url-a
+ pi:2.209.v582ed814ff2f,git:5.7.0,handy-uri-templates-2-api:2.1.8-36.v85
+ e4cb_234a_13,jackson2-api:2.18.3-402.v74c4eb_f122b_2,scm-api:704.v3ce5c
+ 542825a_,structs:343.vdcf37b_a_c81d5
+Plugin-Developers: 
+Plugin-License-Name: MIT
+Plugin-License-Url: https://opensource.org/licenses/MIT
+Plugin-ScmConnection: scm:git:https://github.com/jenkinsci/gitea-plugin.
+ git
+Plugin-ScmTag: 76a0bd4fef5b4579d1d616dc3a749d8c28a67fe8
+Plugin-ScmUrl: https://github.com/jenkinsci/gitea-plugin
+Implementation-Build: 76a0bd4fef5b4579d1d616dc3a749d8c28a67fe8
+

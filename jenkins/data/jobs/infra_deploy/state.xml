@@ -1,0 +1,20 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<jenkins.branch.OrganizationFolder_-State plugin="branch-api@2.1217.v43d8b_b_d8b_2c7">
+  <actions>
+    <entry>
+      <string>org.jenkinsci.plugin.gitea.GiteaSCMNavigator::http://gitea:3000::R3V4N</string>
+      <list>
+        <jenkins.scm.api.metadata.ObjectMetadataAction plugin="scm-api@704.v3ce5c542825a_">
+          <objectUrl>http://gitea:3000/R3V4N</objectUrl>
+        </jenkins.scm.api.metadata.ObjectMetadataAction>
+        <org.jenkinsci.plugin.gitea.GiteaAvatar plugin="gitea@250.v76a_0b_d4fef5b_">
+          <avatar>http://localhost:3000/avatars/a029840df34252141d9525c1533f7cc9</avatar>
+        </org.jenkinsci.plugin.gitea.GiteaAvatar>
+        <org.jenkinsci.plugin.gitea.GiteaLink plugin="gitea@250.v76a_0b_d4fef5b_">
+          <iconClassName>icon-gitea-org</iconClassName>
+          <url>http://gitea:3000/R3V4N</url>
+        </org.jenkinsci.plugin.gitea.GiteaLink>
+      </list>
+    </entry>
+  </actions>
+</jenkins.branch.OrganizationFolder_-State>

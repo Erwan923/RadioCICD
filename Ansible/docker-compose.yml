@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  semaphore:
+    image: semaphoreui/semaphore:latest
+    container_name: semaphore
+    ports:
+      - "3001:3000"  # Interface web: http://localhost:3001
+    environment:
+      SEMAPHORE_DB_DIALECT: bolt
+      SEMAPHORE_ADMIN: admin
+      SEMAPHORE_ADMIN_NAME: JinTea Admin
+      SEMAPHORE_ADMIN_EMAIL: admin@jintea.local
+      SEMAPHORE_ADMIN_PASSWORD: admin
+    volumes:
+      - semaphore-data:/etc/semaphore
+    networks:
+      - jintea_net
+    restart: unless-stopped
+
+volumes:
+  semaphore-data:
+
+networks:
+  jintea_net:
+    external: true

@@ -1,0 +1,30 @@
+commit 3420c9f6f39c52a552894ee5db4803ad206d558b
+tree f68a27d4f7e870e3accf65209523904b3e0a412d
+parent 5800c09dcbcdeb032e0c6e49078f540d4e6999da
+author Erwan923 <erwan.billard@protonmail.com> 2025-06-17 01:25:43 +0200
+committer Erwan923 <erwan.billard@protonmail.com> 2025-06-17 01:25:43 +0200
+
+    Trigger Semaphore from Jenkins
+
+
+:100644 100644 6d1209e24461eebcb4c3520940c08181b4edb95f 35818e2c72cbb979b6598e5bdd3dbf71fc0edcec M	Jenkinsfile
+commit 5800c09dcbcdeb032e0c6e49078f540d4e6999da
+tree 6a6463a7d54188d6aa720f0c346d59d0d4063dea
+parent bd7dedd419127ec0523ef16deaedfa19fef51aaf
+author Erwan923 <erwan.billard@protonmail.com> 2025-06-17 00:50:31 +0200
+committer Erwan923 <erwan.billard@protonmail.com> 2025-06-17 00:50:31 +0200
+
+    test auto webhook
+
+
+:100644 100644 cf62e73d80bec5e7b7afda92c6d16929aa70c1a8 cc5bf20b1696a6e72783bf2b4a8a72801fc3ed74 M	playbook.yml
+commit bd7dedd419127ec0523ef16deaedfa19fef51aaf
+tree 587c9ffe2d3eef122c1d796080d1af5bdf642d50
+parent 7aed55de8848febba3b27eef77fc1610efa5b28b
+author Erwan923 <erwan.billard@protonmail.com> 2025-06-17 00:34:32 +0200
+committer Erwan923 <erwan.billard@protonmail.com> 2025-06-17 00:34:32 +0200
+
+    Trigger build
+
+
+:000000 100644 0000000000000000000000000000000000000000 bc29c9f4fa392d70515f3b5d698358f5fe861337 A	README.md
